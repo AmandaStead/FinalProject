@@ -14,14 +14,13 @@ def home():
 @app.route("/Receipt")
 def receipt():
     return render_template('Receipt.html')
-    
 
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         if request.form.get('action1') == 'Click to See Descriptions':
-            return render_template("Receipt.html") #This will be for Movie Descriptions
+            return render_template("Receipt.html")  # This will be for Movie Descriptions
 
 
 if __name__ == '__main__':

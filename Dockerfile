@@ -1,16 +1,21 @@
 FROM python:3.8
 
-# set a directory for the app
-WORKDIR /usr/src/app
 
-# copy all the files to the container
+WORKDIR /app
+
+
 COPY . .
 
-# install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+ADD Movies.py .
+ADD Receipt.py .
 
-# tell the port number the container should expose
-EXPOSE 5000
 
-# run the command
-CMD ["python", "./app.py"]
+RUN python -m pip install --upgrade pip
+RUN pip install wheel
+RUN pip install flask
+
+EXPOSE 8000
+
+
+
+
