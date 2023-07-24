@@ -3,13 +3,17 @@ import requests
 from flask import flask, request, jsonify, make_response, Flask, render_template
 import json
 
-
 app = Flask(__name__)
 
 
-@app.route("/Receipt")
+@app.route('/Date')
+def home():
+    return render_template('DateTime.html')
+
+
+@app.route("/Snacks")
 def receipt():
-    return render_template('Receipt.html')
+    return render_template('Snacks.html')
 
 
 if __name__ == '__main__':
