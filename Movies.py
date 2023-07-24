@@ -22,6 +22,14 @@ def index():
         if request.form.get('action1') == 'Click to See Descriptions':
             return render_template("Receipt.html")  # This will be for Movie Descriptions
 
+@app.route('/Date')
+def date():
+    return render_template('DateTime.html')
+
+
+@app.route("/Snacks")
+def snacks():
+    return render_template('Snacks.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, debug=True)
