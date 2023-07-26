@@ -1,3 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: finalproject
+  labels:
+    app: finalproject
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: finalproject
+  template:
+    metadata:
+      name: finalproject
+      labels:
+        app: finalproject
+    spec:
+      containers:
+        - name: finalproject
+          image: amandastead44/finalproject
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
 
 
   
