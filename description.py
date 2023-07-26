@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 
 @app.route("/description")
-def receipt():
+def description():
     return render_template('description.html')
 
 
