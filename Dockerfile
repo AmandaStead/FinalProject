@@ -7,7 +7,7 @@ WORKDIR /app
 COPY . .
 
 ADD Movies.py .
-ADD Receipt.py .
+
 
 
 RUN python -m pip install --upgrade pip
