@@ -20,7 +20,7 @@ def receipt():
 def index():
     if request.method == 'POST':
         if request.form.get('action1') == 'Click to See Descriptions':
-            return render_template("Receipt.html")  # This will be for Movie Descriptions
+            return render_template("description.html")  # This will be for Movie Descriptions
 
 @app.route('/Date')
 def date():
@@ -30,6 +30,27 @@ def date():
 @app.route("/Snacks")
 def snacks():
     return render_template('Snacks.html')
+
+@app.route("/Booking")
+def booking():
+    return render_template('BookingTitles.html')
+
+@app.route("/description")
+def description():
+    return render_template('description.html')
+
+@app.route("/Location")
+def location():
+    return render_template('LocationTitle.html')
+
+@app.route('/payment')
+def payment():
+    return render_template('payment.html')
+
+
+@app.route("/trailers")
+def trailers():
+    return render_template('trailers.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, debug=True)
