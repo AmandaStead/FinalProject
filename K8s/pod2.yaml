@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: final project
+  labels:
+    app: final project
+spec:
+  containers:
+    - name: final project
+      image: amandastead44/finalproject
+      imagePullPolicy: IfNotPresent
+  restartPolicy: Always
+  
