@@ -10,11 +10,9 @@ app = Flask(__name__)
 def home():
     return render_template('MovieTitles.html')
 
-
 @app.route("/Receipt")
 def receipt():
     return render_template('Receipt.html')
-
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
@@ -25,7 +23,6 @@ def index():
 @app.route('/Date')
 def date():
     return render_template('DateTime.html')
-
 
 @app.route("/Snacks")
 def snacks():
@@ -38,6 +35,10 @@ def booking():
 @app.route("/description")
 def description():
     return render_template('description.html')
+
+@app.route("/seatSelection")
+def seatSelection():
+    return render_template('seatSelection.html')
 
 @app.route("/Location")
 def location():
