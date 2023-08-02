@@ -7,7 +7,6 @@ metadata:
 spec:
   containers:
     - name: final project
-      image: amandastead44/finalproject
+      image: nginx
       imagePullPolicy: IfNotPresent
   restartPolicy: Always
-  

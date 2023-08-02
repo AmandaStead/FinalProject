@@ -1,25 +1,22 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: finalproject
-  labels:
-    app: web
-spec:
-  replicas: 4
-  selector:
-    matchLabels:
-      app: web
-  template:
-    metadata:
-      name: finalproject
-      labels:
-        app: web
-    spec:
-      containers:
-        - name: finalproject
-          image: amandastead44/finalproject
-          imagePullPolicy: IfNotPresent
-      restartPolicy: Always
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
 
 
   
