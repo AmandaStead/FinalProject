@@ -1,12 +1,23 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: final project
+  name: finalproject
   labels:
-    app: web
+    app: finalproject
 spec:
-  containers:
-    - name: final project
-      image: nginx
-      imagePullPolicy: IfNotPresent
-  restartPolicy: Always
+  replicas: 1
+  selector:
+    matchLabels:
+      app: finalproject
+  template:
+    metadata:
+      name: finalproject
+      labels:
+        app: finalproject
+    spec:
+      containers:
+        - name: finalproject
+          image: registry.hub.docker.com/amandastead44/finalproject
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+
