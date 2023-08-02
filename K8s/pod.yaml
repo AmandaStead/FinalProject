@@ -3,17 +3,17 @@ kind: Deployment
 metadata:
   name: finalproject
   labels:
-    app: finalproject
+    app: web
 spec:
   replicas: 4
   selector:
     matchLabels:
-      app: finalproject
+      app: web
   template:
     metadata:
       name: finalproject
       labels:
-        app: finalproject
+        app: web
     spec:
       containers:
         - name: finalproject

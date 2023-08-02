@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: final project
   labels:
-    app: final project
+    app: web
 spec:
   containers:
     - name: final project
